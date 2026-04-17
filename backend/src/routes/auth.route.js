@@ -15,6 +15,7 @@ router.post("/logout", logout);
 
 router.post("/onboarding", protectRoute, onboard);
 
+// check auth status logged in user details or 401 if not logged in
 router.get("/me", protectRoute, (req, res) => {
   res.status(200).json({ success: true, user: req.user });
 });
